@@ -4,11 +4,14 @@ import numpy as np
 from sys import displayhook
 import seaborn as sns
 import matplotlib.pyplot as plt
-from wrangle import wrangle_telco_data
+from wrangle import wrangle_telco_data, split_telco_data
 from IPython.display import display
 
-# call the data, cleans, and splits
-df, train, validate, test = wrangle_telco_data()
+# call the data
+df = wrangle_telco_data()
+
+train, validate, test = split_telco_data(df)
+
 
 def dsl_v_churn():
 

@@ -46,17 +46,57 @@ My initial hypothesis is that drivers of churn will be about price and what serv
 
 | Feature | Definition |
 |:--------|:-----------|
-|Rated| True or False, The game's result is reflected in each player's rating|
-|Winning Pieces| The color of pieces the winning player was moving|
-|White Rating| Rating of the player moving the white pieces using the Glicko-2 rating method for games played on Lichess|
-|Black Rating| Rating of the player moving the white pieces using the Glicko-2 rating method for games played on Lichess|
-|Rating Difference| The difference in rating between the players in the game|
-|Game Rating| The average rating of the two players in the game|
-|Lower Rated White| True or False, The lower rated player is moving the white pieces|
-|Opening Name| The name of the opening played in the game|
-|Time Control Group| The amount of time allotted to each player to make their moves, **Standard** (60 min or more), **Rapid** (30 - 15 min), **Blitz** (5 - 3 min), or **Bullet** (2 or less), **Other** (any other time limit)|
-|Upset (Target)| True or False, The lower rated player won the game|
-|Additional Features|Encoded and values for categorical data and scaled versions continuous data|
+|customer_id| The customer unique ID number|
+|gender| Male or Female,
+|senior_citizen| 0 or 1, The customer is a senior citizen|
+|partner| Yes or No, Customer is a partner with company|
+|dependents| Yes or No, Customer has dependents|
+|tenure| The time in months how long the customer was or is with the company|
+|phone_service| Yes or No, Custoner has phone serivce with pan|
+|multiple_lines| Yes or No, Customer has multiple lines in plan|
+|online_security| Yes or No, Customer has online security with plan|
+|online_backup| The amount of time allotted to each player to make their moves, **Standard** (60 min or more), **Rapid** (30 - 15 min), **Blitz** (5 - 3 min), or **Bullet** (2 or less), **Other** (any other time limit)|
+|online_backup|
+|device_protection|
+|tech_support|
+|streaming_tv|
+|streaming_movies|
+|paperless_billing|
+|monthly_charges|
+|total_charges|
+|churn|
+|contract_type|
+|internet_service_type|
+|payment_type|
+|gender_Male| 0 or 1, The customer is a male
+|senior_citizen_1| 0 or 1, The customer is a senior citizen
+|partner_Yes| 0 or 1, The customer is a partner with company
+|dependents_Yes| 0 or 1, The customer has dependents
+|phone_service_Yes| 0 or 1, The customer has phone serive with plan
+|multiple_lines_No phone service| 0 or 1, The customer does not have multiple lines with plan
+|multiple_lines_Yes| 0 or 1, The customer has multiple lines with plan
+|online_security_No internet service| 0 or 1, The customer does not have online security with plan
+|online_security_Yes| 0 or 1, The customer has online security with plan
+|online_backup_No internet service| 0 or 1, The customer does not have online backup with plan
+|online_backup_Yes| 0 or 1, The customer has online backup with plan
+|device_protection_No internet service| 0 or 1,
+|device_protection_Yes| 0 or 1,
+|tech_support_No internet service| 0 or 1,
+|tech_support_Yes| 0 or 1,
+|streaming_tv_No internet service| 0 or 1,
+|streaming_tv_Yes| 0 or 1,
+|streaming_movies_No internet service| 0 or 1,
+|streaming_movies_Yes| 0 or 1,
+|paperless_billing_Yes| 0 or 1,
+|churn_Yes (Target)| 0 or 1,
+|contract_type_One year| 0 or 1,
+|contract_type_Two year| 0 or 1,
+|internet_service_type_Fiber optic| 0 or 1,
+|internet_service_type_None| 0 or 1,
+|payment_type_Credit card (automatic)| 0 or 1,
+|payment_type_Electronic check| 0 or 1,
+|payment_type_Mailed check| 0 or 1,
+
  
 # Steps to Reproduce
 1) Clone this repo.
