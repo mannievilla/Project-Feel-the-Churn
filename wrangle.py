@@ -23,6 +23,8 @@ def wrangle_telco_data():
                             ;''', url)
         # drops the unneeded columns
         df.drop(['payment_type_id', 'internet_service_type_id', 'contract_type_id'], axis=1, inplace=True)                    
+        # adds a new column baseline_prediciton takes the most values based on total number of appearance
+        df['baseline_prediction'] = 0
         # saves file to this directory
         df.to_csv(filename)
 #################################Prep the Data#################################
@@ -35,7 +37,7 @@ def wrangle_telco_data():
     col_list = []
     # looping the columns to append to a list if they less than 10 categories so i can dummy those columns
     for col in telco_df: 
-        if telco_df[col].nunique() < 10:
+        if telco_df[col].nunique() < 10 and col != 'baseline_prediction':
             col_list.append(col)
        
     dummy_df = pd.get_dummies(telco_df[col_list], drop_first=True)
@@ -44,6 +46,7 @@ def wrangle_telco_data():
     concat_telco = pd.concat([telco_df, dummy_df], axis=1)
     
     return concat_telco
+
 #################################Split the Data#################################
 
 def split_telco_data(df):

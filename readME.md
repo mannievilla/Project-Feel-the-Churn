@@ -53,15 +53,15 @@ My initial hypothesis is that drivers of churn will be about price and what serv
 |dependents| Yes or No, Customer has dependents|
 |tenure| The time in months how long the customer was or is with the company|
 |phone_service| Yes or No, Custoner has phone serivce with pan|
-|multiple_lines| Yes or No, Customer has multiple lines in plan|
-|online_security| Yes or No, Customer has online security with plan|
-|online_backup| The amount of time allotted to each player to make their moves, **Standard** (60 min or more), **Rapid** (30 - 15 min), **Blitz** (5 - 3 min), or **Bullet** (2 or less), **Other** (any other time limit)|
-|online_backup|
-|device_protection|
-|tech_support|
-|streaming_tv|
-|streaming_movies|
-|paperless_billing|
+|multiple_lines| Yes, No or No Phone Service; Customer has multiple lines in plan|
+|online_security| Yes, No or No Internet Service; Customer has online security with plan|
+|online_backup| Yes, No or No Internet Service; |
+|online_backup| Yes, No or No Internet Service; 
+|device_protection| Yes, No or No Internet Service; 
+|tech_support| Yes, No or No Internet Service; 
+|streaming_tv| Yes, No or No Internet Service; 
+|streaming_movies| Yes, No or No Internet Service; 
+|paperless_billing| 
 |monthly_charges|
 |total_charges|
 |churn|
@@ -79,16 +79,16 @@ My initial hypothesis is that drivers of churn will be about price and what serv
 |online_security_Yes| 0 or 1, The customer has online security with plan
 |online_backup_No internet service| 0 or 1, The customer does not have online backup with plan
 |online_backup_Yes| 0 or 1, The customer has online backup with plan
-|device_protection_No internet service| 0 or 1,
-|device_protection_Yes| 0 or 1,
-|tech_support_No internet service| 0 or 1,
-|tech_support_Yes| 0 or 1,
-|streaming_tv_No internet service| 0 or 1,
-|streaming_tv_Yes| 0 or 1,
-|streaming_movies_No internet service| 0 or 1,
-|streaming_movies_Yes| 0 or 1,
-|paperless_billing_Yes| 0 or 1,
-|churn_Yes (Target)| 0 or 1,
+|device_protection_No internet service| 0 or 1, The customer does not have device proptection with plan
+|device_protection_Yes| 0 or 1, The customer has device protection with plan
+|tech_support_No internet service| 0 or 1, 
+|tech_support_Yes| 0 or 1,  
+|streaming_tv_No internet service| 0 or 1, 
+|streaming_tv_Yes| 0 or 1, 
+|streaming_movies_No internet service| 0 or 1, 
+|streaming_movies_Yes| 0 or 1, 
+|paperless_billing_Yes| 0 or 1, 
+|churn_Yes (Target)| 0 or 1, 
 |contract_type_One year| 0 or 1,
 |contract_type_Two year| 0 or 1,
 |internet_service_type_Fiber optic| 0 or 1,
