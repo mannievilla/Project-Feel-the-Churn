@@ -68,36 +68,8 @@ My initial hypothesis is that drivers of churn will be about price and what serv
 |contract_type|
 |internet_service_type|
 |payment_type|
-|gender_Male| 0 or 1, The customer is a male
-|senior_citizen_1| 0 or 1, The customer is a senior citizen
-|partner_Yes| 0 or 1, The customer is a partner with company
-|dependents_Yes| 0 or 1, The customer has dependents
-|phone_service_Yes| 0 or 1, The customer has phone serive with plan
-|multiple_lines_No phone service| 0 or 1, The customer does not have multiple lines with plan
-|multiple_lines_Yes| 0 or 1, The customer has multiple lines with plan
-|online_security_No internet service| 0 or 1, The customer does not have online security with plan
-|online_security_Yes| 0 or 1, The customer has online security with plan
-|online_backup_No internet service| 0 or 1, The customer does not have online backup with plan
-|online_backup_Yes| 0 or 1, The customer has online backup with plan
-|device_protection_No internet service| 0 or 1, The customer does not have device proptection with plan
-|device_protection_Yes| 0 or 1, The customer has device protection with plan
-|tech_support_No internet service| 0 or 1, 
-|tech_support_Yes| 0 or 1,  
-|streaming_tv_No internet service| 0 or 1, 
-|streaming_tv_Yes| 0 or 1, 
-|streaming_movies_No internet service| 0 or 1, 
-|streaming_movies_Yes| 0 or 1, 
-|paperless_billing_Yes| 0 or 1, 
-|churn_Yes (Target)| 0 or 1, 
-|contract_type_One year| 0 or 1,
-|contract_type_Two year| 0 or 1,
-|internet_service_type_Fiber optic| 0 or 1,
-|internet_service_type_None| 0 or 1,
-|payment_type_Credit card (automatic)| 0 or 1,
-|payment_type_Electronic check| 0 or 1,
-|payment_type_Mailed check| 0 or 1,
+|additional features|Encoded values for categorical data
 
- 
 # Steps to Reproduce
 1) Clone this repo.
 2) Acquire the data from 
@@ -105,15 +77,20 @@ My initial hypothesis is that drivers of churn will be about price and what serv
 4) Run notebook.
  
 # Takeaways and Conclusions
-* Upsets occur in 1/3 of games
-* In games where the lower rated player moves first there is a 4% greater chance of an upset
-* Games that are rated have a 3% higher chance of an upset
-* Games with a "quick" time control (30 min or less) have about a 1 in 3 chance of upset
-* Games with a "slow" time control (60 min or more) have about a 1 in 5 chance of upset
-* The mean rating of players in a game is not a driver of upsets
-* The difference in player rating is a driver of upsets
-* A player's choice of opening is a driver of upsets, however its influence is complicated and I would need more time to discover what role it plays
+* Customers with Fiber Optics have more churn than DSL.
+* Encouraging customers to be on automatic payment plan will seems to reduce churn.
+* 643 manual check writers churned which is a 45% churn rate for all payment types.
+* When the monthly charges reached approximate \$70 the churn rate rised.
+* The median monthly payment for customers who churns is \$79.70
+* Customers who do not churn makeup 73% of the data
+* The final model failed to significantly outperform the baseline.
+* Possible reasons include:
+    “payment_type” and “contract_type” may not have had meaningful relation to who will churn.
+    Since monthly charges" seems to be a larger contributor to churn, adding more of the services to see which service may be contributing to churn. 
  
 # Recommendations
-* To increase the skill intensity of a game add to the length of time players are able to consider their moves
-* Based on the data longer time controls make it less likely for a less skilled player to beat a more skilled player
+* This may be simple enough but have a column for reason for caneling service. Helpful to pinpoint issues and improve service.
+
+
+# Next Steps
+* Explore the relation of Fiber Optics to churn. Services like tech support or streaming services could also be explored.

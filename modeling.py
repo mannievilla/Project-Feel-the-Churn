@@ -148,12 +148,24 @@ y_test = test.churn_Yes
 #############################Decision Tree#############################
 
 
+def model_knn_test(X, X_test, y, y_test):
+    
+    knn = KNeighborsClassifier(n_neighbors=15)
+    knn.fit(X, y)
+    
+    
+    test_score = knn.score(X_test, y_test)
+    
+    print(f"Accuracy of KNN on test data is: {test_score}")
+
+
+
 def model_decision_tree(X, X_val, y, y_val):
     
     clf = DecisionTreeClassifier(max_depth=4, random_state=123)
-
-    trn_score = clf.score(X, y)
     clf.fit(X, y)
+    trn_score = clf.score(X, y)
+    
     val_score = clf.score(X_val, y_val)
     print(f"Accuracy of Decision Tree on train data is: {trn_score}")
     print(f"Accuracy of Decision Tree on validate data is: {val_score}")
@@ -317,9 +329,9 @@ def difference_graph():
 def model_knn(X, X_val, y, y_val):
     
     knn = KNeighborsClassifier(n_neighbors=15)
-
-    trn_score = knn.score(X, y)
     knn.fit(X, y)
+    trn_score = knn.score(X, y)
+    
     val_score = knn.score(X_val, y_val)
     print(f"Accuracy of KNN on train data is: {trn_score}")
     print(f"Accuracy of KNN on validate data is: {val_score}")
@@ -485,8 +497,9 @@ def model_log(X, X_val, y, y_val):
                             intercept_scaling=1, 
                             solver='lbfgs')
 
-    trn_score = log.score(X, y)
     log.fit(X, y)
+    trn_score = log.score(X, y)
+    
     val_score = log.score(X_val, y_val)
     print(f"Accuracy of Log Regression on train data is: {trn_score}")
     print(f"Accuracy of Log Regression on validate data is: {val_score}")
@@ -656,7 +669,21 @@ def log_difference_graph():
 
 ############################# Random Forest #############################
 
+def model_random_forest(X, X_val, y, y_val):
+    
+    rf = RandomForestClassifier(bootstrap=True, 
+                    class_weight=None, 
+                    criterion='gini',
+                    min_samples_leaf=6,
+                    n_estimators=100,
+                    max_depth=5, 
+                    random_state=123)
 
+    rf.fit(X, y)
+    trn_score = rf.score(X, y)
+    val_score = rf.score(X_val, y_val)
+    print(f"Accuracy of Random Forest on train data is: {trn_score}")
+    print(f"Accuracy of Random Forest on validate data is: {val_score}")
 
 
 
